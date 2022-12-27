@@ -9,6 +9,7 @@ function search() {
 })
 }
 
+
 //exemplo dado na aula de rodar texto corrido
 function animate_string(id) {
     var element = document.getElementById(id);
@@ -19,4 +20,18 @@ function animate_string(id) {
       textNode.data = text;
     }, 100);
 }
+
+/*$('.addToFavBtn').on('click', event => {
+  var cidade = $(event.target).parents()[1].firstElementChild.innerHTML;
+
+  var favorites = localStorage.getItem("favorites");
+  if (!favorites){
+    localStorage.setItem("favorites", JSON.stringify({stores:[]}));
+    favorites = JSON.parse(localStorage.getItem("favorites"));*/
+
+// data e hora - a resolver 
+// new Date() cria 1 objeto com a data e hora atual
+/*const d = new Date();
+document.getElementById("demo").innerHTML = d;*/
+
 
