@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DETALHE - weather API</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
+    <link rel="stylesheet" type="text/css" href="estilos.css">
     <script type="text/javascript" src="js/javascript.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
@@ -20,7 +20,7 @@
     <!-- menu-->
     <header>
         <div class="fotonav">
-            <img src="https://thumbs.dreamstime.com/b/fundo-da-previs%C3%A3o-de-tempo-conceito-das-altera%C3%A7%C3%B5es-clim%C3%A1ticas-120764591.jpg" class="fotonav">
+            <img src="https://www.metoffice.gov.uk/binaries/content/gallery/metofficegovuk/hero-images/science/weather-forecast-background.jpg/weather-forecast-background.jpg/metofficegovuk%3AheroXXLarge" class="fotonav">
         
 
         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
@@ -30,10 +30,10 @@
                         <a class="nav-link" href="#">HOME</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link active" href="detalhe.html">EM DETALHE</a>
+                        <a class="nav-link " href="detalhe.html">EM DETALHE</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="forecast.html">FORECAST</a>
+                        <a class="nav-link active" href="forecast.html">FORECAST</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="favoritos.html">FAVORITOS</a>
@@ -48,39 +48,18 @@
     <!--pesquisa por cidade-->
     <!--e mostrar seis cidades a escolha-->
     <main>  
-        <div id="fundo" class="container">
-            <h2>MeteoInfor</h2> 
-            <div class="row">
-                <div class="col-sm-4">
-                    Cidade 1
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 2
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 3
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 4
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 5
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 6
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-            </div>
+      
         </div>
         <div>
+      <div > 
+        <button class="btn1">Botão 1</button>
+        <button class="btn2">Botão 2</button>
+        <button class="btn3">Botão 3</button>
+        <button class="btn4">Botão 4</button>
+        <button class="btn5">Botão 5</button>
             <div class="pesquisa">
                 <label for="LOCALIDADE">Localidade:</label>
-                <input type="text" id="LOCALIDADE" />
+                <input type="text" id="LOCALIDADE" placeholder="Localidade"/>
             </div>
         </div>
         <br>
@@ -88,8 +67,7 @@
             <button onclick="search()" type="submit" class="btn btn-primary">Pesquisar</button>
         </div>
         <br>
-        <div id="fundo2">
-            <p1>texto</p1>
+        
         </div>
     </main>
 

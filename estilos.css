@@ -1,0 +1,69 @@
+.navbar {
+	width: 100%;
+}
+
+.fundo {
+	color: white;
+	font-size: 200px;
+	background-size: cover;
+	background-repeat: initial;
+}
+
+.fotonav img{
+	width: 100%;
+	height: 200px;
+	
+
+}
+
+.nav-link{
+	text-align: center;
+}
+
+.nav-item{
+	height: 50%;
+}
+
+.container-fluid{
+	background-color: transparent;
+	height: 10px;
+	width: 1349px;
+	text-align: center;
+	margin:10px 10px;
+}
+
+h2{
+	text-align: center;
+}
+
+.col-sm-4{
+	display: inline-block;
+}
+
+section{
+	display: inline-block !important;
+}
+
+.imgpequena{
+	height: 50px;
+	height: 50px;
+}
+
+.btn1{
+   margin-right: 20px;
+}
+.btn2{
+   margin-left: 20px;
+   margin-right: 20px;
+}
+.btn3{
+   margin-left: 20px;
+   margin-right: 20px;
+}
+.btn4{
+   margin-left: 20px;
+   margin-right: 20px;
+}
+.btn5{
+   margin-left: 20px;
+}
