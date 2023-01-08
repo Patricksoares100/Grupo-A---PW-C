@@ -1,13 +1,6 @@
 
 const apikey = "d9b9e4b6a98f4ee3b25f3f5ad4fd247e";
 
-const cidadeinput = document.querySelector("#cidade-input");
-const procurabotao = document.querySelector("#pesquisar");
-
-
-const procurabotao = document.querySelector("#pesquisar");
-
-const elementoCidade = document.querySelector("#cidade")
 
 // funcoes
 
@@ -26,9 +19,19 @@ function search() {
 	.done(function(msg){
 		console.log(msg);
 
-    city.Element.innerText = data.name
+    /* displayweather: function(data){
+      const{ name } = data;
+      const { icon, description} = data.weather[0];
+      const {temp, humidity } = data.main;
+      const {speed} = data.wind;
+      console.log(name,icon,description,temp,humidity,speed)
+      document.querySelector(".city").innerText = "weather in" + name;
+      document.querySelector(".icon").src = "http://openweathermap.org/img/wn/"+ icon + "@2x.png;" 
+    }*/
 })
 }
+
+
 
 
 //exemplo dado na aula de rodar texto corrido

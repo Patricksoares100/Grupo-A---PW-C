@@ -17,12 +17,12 @@
 
 <!--onload para correr ao abrir o body-->
 <body onload="animate_string()">
-	<p id="demo"></p>
 	<p id="GPS"></p>
 	<marquee> <img src="https://emojitool.com/img/facebook/13.1/cityscape-406.png" class="logocidade"> CIDADE ATUAL (<button onclick="getLocation()">AQUI</button>) - Temperatura Atual º - TEMP MAX º - TEMP MIN <br></marquee>
 	<!-- cabeçalho para logo-->
 	<!-- menu-->
 
+	<header>
 	<div class="fotonav">
 			<img src="https://wallpaperaccess.com/full/5466320.jpg">
 	</div>
@@ -52,10 +52,9 @@
 	<!--e mostrar seis cidades a escolha-->
 	<main>	
 
-		<div id="fundo" class="container"></div>
+		<div class="fundo"></div>
 			<h2>PRINCIPAIS CIDADES</h2>	
-			<div class="row"></div>
-
+			
 			<div class=quadro-pesquisa>
 					<div class="formulario">
 						<div class="input-formulario">
@@ -74,13 +73,13 @@
 							<img src="http://openweathermap.org/img/wn/09d.png">
 							<i class="fa-solid fa-wind"></i>
 							<span>13 km-h</span>
-
-							
-						</div>
+							</div>
 							</p>
 						</div>
 					</div>
 					<div id="tempo-info"></div>
+
+
 			</div>
 				<div class="Centrado">
 					<div class="cityimg">
@@ -102,9 +101,7 @@
 				</div>
 			</div>
 		<br>
-		<div id="fundo2">
-			<p1>texto</p1>
-		</div>
+		
 	</main>
 </body>
 
