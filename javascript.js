@@ -4,11 +4,15 @@ const apikey = "d9b9e4b6a98f4ee3b25f3f5ad4fd247e";
 
 // funcoes
 
-const mostrartempobasedados = async (cidade) =>{
+/*const mostrartempobasedados = async (cidade) =>{
   const data = await mostrartempobasedados(cidade);
 
   elementoCidade.innerText = data.name;
 }
+*/
+
+
+// funcao pesquisa cidade
 
 function search() {
 	var city = document.getElementById('LOCALIDADE').value;
@@ -28,10 +32,34 @@ function search() {
       document.querySelector(".city").innerText = "weather in" + name;
       document.querySelector(".icon").src = "http://openweathermap.org/img/wn/"+ icon + "@2x.png;" 
     }*/
+    return msg;
 })
 }
 
-
+fetch('https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=d9b9e4b6a98f4ee3b25f3f5ad4fd247e&units=metric')
+  .then(response => response.json())
+  .then(data => {
+    console.log(data.main.temp)
+    // filtrando os dados pela chave "name"
+    const filteredData = data.filter(item => item.name === "LOCALIDADE");
+    // iterando pelos dados filtrados
+    filteredData.forEach(item => {
+      const { name, temp, pressure } = item;
+      // criando elementos dinamicamente
+      const elementName = document.createElement("p");
+      elementName.innerHTML = name;
+      const elementTemp = document.createElement("p");
+      elementTemp.innerHTML = temp;
+      const elementPressure = document.createElement("p");
+      elementPressure.innerHTML = pressure;
+      // adicionando elementos ao elemento pai
+      const parent = document.getElementById("result");
+      parent.appendChild(elementName);
+      parent.appendChild(elementTemp);
+      parent.appendChild(elementPressure);
+    });
+  })
+  .catch(error => console.error(error))
 
 
 //exemplo dado na aula de rodar texto corrido
@@ -45,7 +73,7 @@ function animate_string(id) {
     }, 100);
 }
 
-mostrartempo: (resp) 
+//mostrartempo: (resp) 
 /*$('.addToFavBtn').on('click', event => {
   var cidade = $(event.target).parents()[1].firstElementChild.innerHTML;
 
@@ -59,7 +87,7 @@ mostrartempo: (resp)
 /*const d = new Date();
 document.getElementById("demo").innerHTML = d;*/
 
-//GPS 
+//GPS W3SCHOOL
 
 var x = document.getElementById("GPS");
 
