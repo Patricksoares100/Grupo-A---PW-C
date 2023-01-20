@@ -48,48 +48,20 @@
     <!--e mostrar seis cidades a escolha-->
     <main>  
         <div id="fundo" class="container">
-            <h2>DETALHES</h2> 
-            <div class="row">
-                <div class="col-sm-4">
-                    Cidade 1
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 2
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 3
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 4
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 5
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 6
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
+            <h2>DETALHES<input type="text" id="LOCALIDADE" placeholder="LOCALIDADE" />
+				<button onclick="search()" type="submit" class="btn btn-primary">Pesquisar<span>&#128269;</span> </h2>
+            
             </div>
         </div>
-        <div>
-            <div class="pesquisa">
-                <label for="LOCALIDADE">Localidade:</label>
-                <input type="text" id="LOCALIDADE" />
-            </div>
-        </div>
-        <br>
-        <div class="button">
-            <button onclick="search()" type="submit" class="btn btn-primary">Pesquisar</button>
-        </div>
-        <br>
-        <div id="fundo2">
-            <p1>texto</p1>
-        </div>
+
+        <table class="tabeladetalhes">
+            <td>Temperatura º</td>
+            <td>Vento</td>
+            <td>Chuva</td>
+
+        </table>
+
+
     </main>
 
 <div>
