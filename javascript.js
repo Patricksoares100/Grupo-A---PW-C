@@ -1,65 +1,66 @@
 
 const apikey = "d9b9e4b6a98f4ee3b25f3f5ad4fd247e";
+const citys = ["Leiria","Porto","Lisboa","Coimbra","Faro","Braga"];
 
 
-// funcoes
-
-/*const mostrartempobasedados = async (cidade) =>{
-  const data = await mostrartempobasedados(cidade);
-
-  elementoCidade.innerText = data.name;
+//A chamar onLoad
+function init() {
+  //animate_string();
+  getInicialCityData();
 }
-*/
+
 
 
 // funcao pesquisa cidade
 
 function search() {
-	var city = document.getElementById('LOCALIDADE').value;
+	//var city = document.getElementById('').value;
+  var city = $('#LOCALIDADE_SEARCH').val();
 	$.ajax({
 		method:"GET",
-		url: "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=d9b9e4b6a98f4ee3b25f3f5ad4fd247e&units=metric"
+		url: "https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid="+apikey+"&units=metric"
 		 })
 	.done(function(msg){
-		console.log(msg);
+    console.log(msg);
 
-    /* displayweather: function(data){
-      const{ name } = data;
-      const { icon, description} = data.weather[0];
-      const {temp, humidity } = data.main;
-      const {speed} = data.wind;
-      console.log(name,icon,description,temp,humidity,speed)
-      document.querySelector(".city").innerText = "weather in" + name;
-      document.querySelector(".icon").src = "http://openweathermap.org/img/wn/"+ icon + "@2x.png;" 
-    }*/
-    return msg;
+    var cloneCard = $('#cidades-default').clone();
+    // const icon = "http://openweathermap.org/img/wn/"
+
+    $('#city', cloneCard).text(msg.name);
+    $('#temp', cloneCard).text(msg.main.temp);
+    $('#wind', cloneCard).text(msg.wind.speed);
+    // $('#temp-icon', cloneCard).attr("src", icon+msg.weather[0].icon);
+    
+    
+    $('#search-result').append(cloneCard);	
 })
 }
 
-fetch('https://api.openweathermap.org/data/2.5/weather?q="+city+"&appid=d9b9e4b6a98f4ee3b25f3f5ad4fd247e&units=metric')
-  .then(response => response.json())
-  .then(data => {
-    console.log(data.main.temp)
-    // filtrando os dados pela chave "name"
-    const filteredData = data.filter(item => item.name === "LOCALIDADE");
-    // iterando pelos dados filtrados
-    filteredData.forEach(item => {
-      const { name, temp, pressure } = item;
-      // criando elementos dinamicamente
-      const elementName = document.createElement("p");
-      elementName.innerHTML = name;
-      const elementTemp = document.createElement("p");
-      elementTemp.innerHTML = temp;
-      const elementPressure = document.createElement("p");
-      elementPressure.innerHTML = pressure;
-      // adicionando elementos ao elemento pai
-      const parent = document.getElementById("result");
-      parent.appendChild(elementName);
-      parent.appendChild(elementTemp);
-      parent.appendChild(elementPressure);
+
+
+
+function getInicialCityData() {
+  var quadroDefault = $('#cidades-default').clone();
+  citys.forEach(c => {
+    $.ajax({
+      method:"GET",
+      url: "https://api.openweathermap.org/data/2.5/weather?q="+c+"&appid="+apikey+"&units=metric"
+       })
+    .done(function(msg){
+      var quadro = quadroDefault.clone();
+      
+    $('#city', quadro).text(msg.name);
+    $('#temp', quadro).text(msg.main.temp);
+    $('#wind', quadro).text(msg.wind.speed);
+
+    $('#default-citys').append(quadro);
+    
+    
     });
-  })
-  .catch(error => console.error(error))
+});
+}
+
+
 
 
 //exemplo dado na aula de rodar texto corrido
@@ -73,19 +74,7 @@ function animate_string(id) {
     }, 100);
 }
 
-//mostrartempo: (resp) 
-/*$('.addToFavBtn').on('click', event => {
-  var cidade = $(event.target).parents()[1].firstElementChild.innerHTML;
 
-  var favorites = localStorage.getItem("favorites");
-  if (!favorites){
-    localStorage.setItem("favorites", JSON.stringify({stores:[]}));
-    favorites = JSON.parse(localStorage.getItem("favorites"));*/
-
-// data e hora - a resolver 
-// new Date() cria 1 objeto com a data e hora atual
-/*const d = new Date();
-document.getElementById("demo").innerHTML = d;*/
 
 //GPS W3SCHOOL
 
@@ -102,4 +91,17 @@ function getLocation() {
 function showPosition(position) {
   x.innerHTML = "Latitude: " + position.coords.latitude + 
   "<br>Longitude: " + position.coords.longitude;
+}
+
+function addFavoritos() {
+  var old = JSON.parse(localStorage.getItem('Favoritos'));
+  var city = $('#LOCALIDADE_SEARCH').val();
+  //VER COMO GUARDAR AS VARIAS CIDADES NO LOCAL STORAGE
+  // if(old){
+  // VEr se quantodade =< 6
+  //   localStorage.setItem('Favoritos',old.append(city));
+  // } else {
+  //   localStorage.setItem('Favoritos',JSON.stringify(city));
+  // }
+  localStorage.setItem('Favoritos',['Leiria','Porto','Braga']);
 }

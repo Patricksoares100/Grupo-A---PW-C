@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>DETALHE - weather API</title>
     <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script type="text/javascript" src="js/javascript.js"></script>
+    <script type="text/javascript" src="js/favoritos.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
@@ -15,7 +15,7 @@
 </head>
 
 <!--onload para correr ao abrir o body-->
-<body onload="animate_string()">
+<body onload="searchFavoritos()">
     <p id="GPS"></p>
     <marquee> <img src="https://emojitool.com/img/facebook/13.1/cityscape-406.png" class="logocidade"> CIDADE ATUAL (<button onclick="getLocation()">AQUI</button>) - Temperatura Atual º - TEMP MAX º - TEMP MIN <br></marquee>
     <!-- cabeçalho para logo-->
@@ -50,36 +50,32 @@
     <!--pesquisa por cidade-->
     <!--e mostrar seis cidades a escolha-->
     <main>  
-     
-            <div class="row">
-                <div class="col-sm-4">
-                    Cidade 1
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 2
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 3
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 4
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 5
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-                <div class="col-sm-4">
-                    Cidade 6
-                    <img src= "https://www.clipartmax.com/png/middle/113-1135280_about-us-building-logo-vector.png" class="imgpequena">
-                </div>
-            </div>
+        <div id="default-citys"></div>
+			
+        <div id="cidades-default" class="quadro-pesquisa">
+        <h5>
+            <span id="cit">Cidade</span>
+        </h5>
+        <span id="city"></span>
+        <p id="temp">
+            <span>
+                <img id="temp-icon">
+            </span>&deg;C
+        </p>
+        <div id="humidity">
+        <img src="http://openweathermap.org/img/wn/09d.png">
+        <span id="wind"></span>
         </div>
-        <div>
-            <div class="pesquisa">
+        <button onclick="remove()">Remove</button>
+        </div>
+        <!-- <div id="fundo" class="container">
+            <h2>FAVORITOS<input type="text" id="LOCALIDADE" placeholder="LOCALIDADE" />
+				<button onclick="search()" type="submit" class="btn btn-primary">Pesquisar<span>&#128269;</span> </h2>
+            </div> -->
+ 
+
+
+            <!-- <div class="pesquisa">
                 <label for="LOCALIDADE">Localidade:</label>
                 <input type="text" id="LOCALIDADE" />
             </div>
@@ -91,7 +87,7 @@
         <br>
         <div id="fundo2">
             <p1>texto</p1>
-        </div>
+        </div> -->
     </main>
 
 <div>

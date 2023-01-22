@@ -50,8 +50,21 @@ td{
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	padding: 0 10px;
+
 }
+
+/*FAVORITOS*/
+
+.quadro-favoritos{
+	display: flex;
+	display: inline-block;
+	justify-content: space-between;
+	flex-wrap: wrap;
+	width: 25%;
+	grid-template-columns: 1fr 1fr;
+	margin: 50px;
+}
+
 
 /*clima */
 
@@ -121,20 +134,3 @@ section{
 
 .btn1{
    margin-right: 20px;
-}
-.btn2{
-   margin-left: 20px;
-   margin-right: 20px;
-}
-.btn3{
-   margin-left: 20px;
-   margin-right: 20px;
-}
-.btn4{
-   margin-left: 20px;
-   margin-right: 20px;
-}
-.btn5{
-   margin-left: 20px;
-} 
-
