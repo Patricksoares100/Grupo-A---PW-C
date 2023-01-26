@@ -9,7 +9,17 @@ function init() {
   getInicialCityData();
 }
 
-
+/*//leiria topo
+function search() {
+  var city = $('#lOCAL_LEIRIA').val();
+	$.ajax({
+		method:"GET",
+		url: "https://api.openweathermap.org/data/2.5/weather?lat={39.7436}&lon={-8.8071}&appid="+apikey+"&units=metric"
+		 })
+	.done(function(msg){
+    console.log(msg);
+  })
+}*/
 
 // funcao pesquisa cidade
 
@@ -29,7 +39,7 @@ function search() {
     $('#city', cloneCard).text(msg.name);
     $('#temp', cloneCard).text(msg.main.temp);
     $('#wind', cloneCard).text(msg.wind.speed);
-    // $('#temp-icon', cloneCard).attr("src", icon+msg.weather[0].icon);
+    $('#humidity', cloneCard).text(msg.main.humidity);
     
     
     $('#search-result').append(cloneCard);	
@@ -52,6 +62,7 @@ function getInicialCityData() {
     $('#city', quadro).text(msg.name);
     $('#temp', quadro).text(msg.main.temp);
     $('#wind', quadro).text(msg.wind.speed);
+    
 
     $('#default-citys').append(quadro);
     
