@@ -17,8 +17,10 @@
 
 <!--onload para correr ao abrir o body-->
 <body onload="init()">
-	<p id="GPS"></p>
-	<marquee> <img src="https://emojitool.com/img/facebook/13.1/cityscape-406.png" class="logocidade"> CIDADE ATUAL (<button onclick="getLocation()">AQUI</button>) - Temperatura Atual º - TEMP MAX º - TEMP MIN <br></marquee>
+
+	<marquee> <img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade"> PROJETO PRÁTICO DA UNIDADE CURRICULAR DE PROGRAMAÇÃO WEB - WEBSITE DE CONSULTA DE METEOROLOGIA
+		<img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade">
+		</marquee>
 	<!-- cabeçalho para logo-->
 	<!-- menu-->
 
@@ -48,25 +50,27 @@
 	</header>
 	<!--pesquisa por cidade-->
 	<!--e mostrar seis cidades a escolha-->
-	<main>	
-		<div class="imagemseq"></div>
-			<h2>6 PRINCIPAIS CIDADES PORTUGUESAS </h2>
-	<div id="default-citys"></div>
-			
-	<div id="cidades-default" class="quadro-pesquisa">
-	<h5>
-		<span id="cit">Cidade</span>
+	<main> 	
+		
+			<h2 class="seistitulo">6 PRINCIPAIS CIDADES PORTUGUESAS </h2>
+
+			<div class="seistabelas">
+	<div id = "default-citys"></div>
+	<div id = "cidades-default" class = "quadro-pesquisa">
+	<h5><span id = "cit">Cidade</span>
 	</h5>
-	<span id="city"></span>
-	<p>
-	<span id="wind"></span>
-	<p id="temp">
-		<span> 
-		</span>&deg;C
-	</p>
-	<span id="humidity"></span>
-	</span>
-	</div>			
+	<span id = "city"></span>
+		<h6></h6>
+	TEMPERATURA ATUAL<br><span id = "temp"></span> 
+	<h6></h6>
+	SENSAÇÃO TERMICA<br><span id = "termic"></span> 
+	<h6></h6>
+	VENTO KM/H <br><span id = "wind"></span> 
+	<h6></h6>
+	HUMIDADE %<br><span id = "humidity"></span>
+	</div>
+			</div>
+	
 					<div class="pesquisa">
 						<label for="LOCALIDADE">CIDADE 1:</label>
 						<input type="text" id="LOCALIDADE_SEARCH" placeholder="LOCALIDADE" />

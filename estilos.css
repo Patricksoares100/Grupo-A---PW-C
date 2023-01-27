@@ -6,7 +6,7 @@
 	margin: 0;
 }
 
-formulario */
+/*formulario */
 
 .input-formulario{
 	display: flex; /*ao lado da lupa*/
@@ -14,6 +14,36 @@ formulario */
 
 /*pagina detalhes*/
 
+
+.seistabelas{
+	border: 5px solid #ccc; /* Adiciona uma borda sólida de 1px com a cor cinza */
+    background-color: #d8d8d8; /* Adiciona um fundo claro */
+    padding: 10px; /* Adiciona espaçamento interno */
+    border-radius: 50px; /* Adiciona bordas arredondadas */
+    box-shadow: 2px 2px 2px #aaa; /* Adiciona sombra à caixa */
+    text-align: center; /* Centraliza o texto */
+    font-size: 1.2em; /* Aumenta o tamanho da fonte */
+    color: #333; /* Define a cor do texto */
+    margin: 20px auto; /* Adiciona margem externa de 20px e centraliza-a */
+	background-image: url(https://img.freepik.com/vetores-premium/fundo-monocromatico-branco-gradiente_23-2149042071.jpg?w=996);
+	opacity: 0.8; /* Define a opacidade da imagem */
+    background-repeat: no-repeat; /* Desabilita a repetição da imagem */
+    background-size: cover; /* Ajusta a imagem para cobrir todo o espaço */
+
+}
+
+.seistitulo{
+
+	font-family: 'Montserrat', sans-serif; /* Usa a fonte Montserrat */
+    color: #333; /* Define a cor do texto como preto */
+    text-transform: uppercase; /* Deixa o texto em maiúsculas */
+    font-size: 2em; /* Aumenta o tamanho da fonte */
+    letter-spacing: 2px; /* Aumenta o espaçamento entre as letras */
+    text-align: center; /* Alinha o texto a esquerda */
+    margin-bottom: 10px; /* Adiciona margem inferior */
+    text-decoration: underline; /* adiciona sublinhado no texto */
+    font-weight: bold; /* deixa o texto em negrito */
+}
 .tabeladetalhes{
 	background-color: rgb(244, 244, 244);
 	box-shadow: black;
@@ -72,8 +102,9 @@ td{
 	display: inline-block;
 }
 
+
 .logocidade{
-	width: 30px;}
+	width: 200px;}
 
 .navbar {
 	width: 100%;}
@@ -96,12 +127,13 @@ td{
 	border-radius: 1rem;
 }
 
-
-h2{
+.h2{
 	border: 5px solid black;
 	margin: 20px 50px 75px 100px;
 	text-align: center;
 }
+
+
 .fotonav img{
 	width: 100%;
 	height: 250px;
@@ -118,7 +150,7 @@ h2{
 
 
 .pesquisa{
-	border: 5px solid black;
+	border: 5px;
 	margin: 20px 50px 75px 100px;
 	text-align: center;
 }
@@ -134,3 +166,11 @@ section{
 
 .btn1{
    margin-right: 20px;
+
+}
+
+.tabelaformatofor{
+	padding: 20px; /*espaçamento*/
+	border-spacing: 20px;
+
+}
