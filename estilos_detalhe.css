@@ -1,0 +1,52 @@
+.fotonav img{
+	width: 100%;
+	height: 250px;
+	background-size: 100% 100%;
+}
+
+h2{
+	border: 4px solid black;
+	margin: 20px 50px 75px 100px;
+	text-align: center;
+	border-radius: 50px;
+	
+}
+
+
+/*pagina_detalhe*/
+
+.logocidade{
+	width: 200px;
+}
+
+.fotonav img{
+	width: 100%;
+	height: 250px;
+	background-size: 100% 100%;
+}
+
+#h4{
+	margin-top: 30px;
+}
+
+#pesquisa_detalhe{
+
+	border: 2px solid #ccc; 
+    padding: 10px; 
+    border-radius: 50px; 
+    box-shadow: 2px 2px 2px #aaa; 
+    text-align: center; 
+    font-size: 1.2em; 
+    color: #333; 
+    margin: 20px auto; 
+	background-image: url(https://img.freepik.com/vetores-premium/fundo-monocromatico-branco-gradiente_23-2149042071.jpg?w=996);
+	opacity: 0.8; 
+    background-repeat: no-repeat; 
+    background-size: cover; 
+}
+
+.info_main_style{
+	margin-top: 15px;
+	color: black;
+	
+}

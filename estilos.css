@@ -16,7 +16,8 @@
 
 
 .seistabelas{
-	border: 5px solid #ccc; 
+	
+	border: 2px solid #ccc; 
     padding: 10px; 
     border-radius: 50px; 
     box-shadow: 2px 2px 2px #aaa; 
@@ -40,7 +41,6 @@
     letter-spacing: 2px; 
     text-align: center; 
     margin-bottom: 10px; 
-    text-decoration: underline; 
     font-weight: bold; 
 }
 .tabeladetalhes{
@@ -63,7 +63,17 @@ td{
 	text-align: center;
 	
 }
+
+
 /*FORECAST */
+
+#h4{
+	margin-top: 30px;
+}
+
+H3{
+	text-align: center;
+}
 
 .tabelaforecast{
 	background-color: rgb(244, 244, 244);
@@ -80,6 +90,14 @@ td{
 	align-items: center;
 	justify-content: center;
 
+}
+
+h2{
+	border: 4px solid black;
+	margin: 20px 50px 75px 100px;
+	text-align: center;
+	border-radius: 50px;
+	
 }
 
 /*FAVORITOS*/

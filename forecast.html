@@ -15,17 +15,18 @@
 
 </head>
 
-<!--onload para correr ao abrir o body-->
 <body>
-	<marquee> <img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade"> PROJETO PRÁTICO DA UNIDADE CURRICULAR DE PROGRAMAÇÃO WEB - WEBSITE DE CONSULTA DE METEOROLOGIA
+	<marquee> <img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade"> PROJETO
+		PRÁTICO DA UNIDADE CURRICULAR DE PROGRAMAÇÃO WEB - WEBSITE DE CONSULTA DE METEOROLOGIA
 		<img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade">
-		</marquee>
+	</marquee>
+
 	<!-- menu-->
 
 	<header>
-	<div class="fotonav">
+		<div class="fotonav">
 			<img src="https://wallpaperaccess.com/full/5466320.jpg">
-	</div>
+		</div>
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 			<div class="container-fluid">
 				<ul class="navbar-nav">
@@ -41,114 +42,160 @@
 					<li class="nav-item">
 						<a class="nav-link" href="favoritos.html">FAVORITOS</a>
 					</li>
-					
+
 				</ul>
 			</div>
 		</nav>
 	</header>
-    <!--pesquisa por cidade-->
-    <!--e mostrar seis cidades a escolha-->
-    <main> 
-		
-		<div id="fundo" class="container">
-		<h2>DETALHES<input type="text" id="LOCALIDADE_SEARCH" placeholder="LOCALIDADE" />
-				<button onclick="search_dia()" type="submit" class="btn btn-primary">Pesquisar<span>&#128269;</span></button></h2>
-			
-			<div class="seistabelas"> 
+	<!--pesquisa por cidade-->
+	<!--e mostrar seis cidades a escolha-->
+	<main>
 
-				<div class="quadro-favoritos"> 
-					<div id = "cidades-default" class = "quadro-pesquisa"> 
-						<H2>TEMPERATURA ATUAL</H2>
-						<P><h4>HOJE</H4></P>
-						<div id="temp"></div>
+		<div id="fundo" class="container">
+			<h2>FORECAST</h2>
+			<div class="seistabelas">
+				<h4 id='h4'>PESQUISE PELA CIDADE: <input type="text" id="LOCALIDADE_SEARCH" placeholder="escrever..." />
+				<button onclick="search_dia()" type="submit" class="btn btn-primary">Pesquisar<span>&#128269;</span></button></h4>
+				<div class ="">  <!--Pesquisa de 3 em 3 horas, buscar o ID para a hora e outro ID para temperatura-->
+					<h2>TEMPERATURA 3 EM 3 HORAS</h2>
+					<p>Previsão para <span id="hora"></span> <div id="temp5"></div> </p>
+					<p>Previsão para <span id="hora1"></span> <div id="temp6"></div> </p>
+					<p>Previsão para <span id="hora2"></span> <div id="temp7"></div> </p>
+					<p>Previsão para <span id="hora3"></span> <div id="temp8"></div> </p>
+					<p>Previsão para <span id="hora4"></span> <div id="temp9"></div> </p>
+				</div>
+				<!--motor de pesquisa para forecast de 5 dias, API a ir buscar o valor -->
+				<div class="quadro-favoritos">
+					<div id="cidades-default" class="quadro-pesquisa">
+						<H3>TEMPERATURA ATUAL</H3>
+						<P>
+						<H6>HOJE</H6>
+						</P>
+						<div id="temp0"></div>
 						<br>
-						<P><h4>AMANHÃ</H4></P>					
+						<P>
+						<H6>AMANHÃ</H6>
+						</P>
 						<div id="temp1"></div>
 						<br>
-						<P><H4>DIA 3</H4></P>					
+						<P>
+						<H6>DIA 3</H6>
+						</P>
 						<div id="temp2"></div>
 						<br>
-						<P><H4>DIA 4</H4></P>					
+						<P>
+						<H6>DIA 4</H6>
+						</P>
 						<div id="temp3"></div>
 						<br>
-						<P><H4>DIA 5</H4></P>					
+						<P>
+						<H6>DIA 5</H6>
+						</P>
 						<div id="temp4"></div>
 						<br>
-							</div>
 					</div>
-			
+				</div>
 
-				
-				<div class="quadro-favoritos"> 
-					<div id = "cidades-default" class = "quadro-pesquisa"> 
-						<H2>TEMPERATURA MINIMA</H2>
-						<P><h4>HOJE</H4></P>
+
+
+				<div class="quadro-favoritos">
+					<div id="cidades-default" class="quadro-pesquisa">
+						<H3>TEMPERATURA MINIMA</H3>
+						<P>
+						<h6>HOJE</H6>
+						</P>
 						<div id="tempmin"></div>
 						<br>
-						<P><h4>AMANHÃ</H4></P>					
+						<P>
+						<h6>AMANHÃ</H6>
+						</P>
 						<div id="tempmin1"></div>
 						<br>
-						<P><H4>DIA 3</H4></P>					
+						<P>
+						<H6>DIA 3</H6>
+						</P>
 						<div id="tempmin2"></div>
 						<br>
-						<P><H4>DIA 4</H4></P>					
+						<P>
+						<H6>DIA 4</H6>
+						</P>
 						<div id="tempmin3"></div>
 						<br>
-						<P><H4>DIA 5</H4></P>					
+						<P>
+						<H6>DIA 5</H6>
+						</P>
 						<div id="tempmin4"></div>
 						<br>
-							</div>
 					</div>
+				</div>
 
-					<div class="quadro-favoritos"> 
-						<div id = "cidades-default" class = "quadro-pesquisa"> 
-							<H2>TEMPERATURA MAXIMA</H2>
-							<P><h4>HOJE</H4></P>
-							<div id="tempmax"></div>
-							<br>
-							<P><h4>AMANHÃ</H4></P>					
-							<div id="tempmax1"></div>
-							<br>
-							<P><H4>DIA 3</H4></P>					
-							<div id="tempmax2"></div>
-							<br>
-							<P><H4>DIA 4</H4></P>					
-							<div id="tempmax3"></div>
-							<br>
-							<P><H4>DIA 5</H4></P>					
-							<div id="tempmax4"></div>
-							<br>
-								</div>
-						</div>
+				<div class="quadro-favoritos">
+					<div id="cidades-default" class="quadro-pesquisa">
+						<H3>TEMPERATURA MAXIMA</H3>
+						<P>
+						<h6>HOJE</H6>
+						</P>
+						<div id="tempmax"></div>
+						<br>
+						<P>
+						<h6>AMANHÃ</H6>
+						</P>
+						<div id="tempmax1"></div>
+						<br>
+						<P>
+						<H6>DIA 3</H6>
+						</P>
+						<div id="tempmax2"></div>
+						<br>
+						<P>
+						<H6>DIA 4</H6>
+						</P>
+						<div id="tempmax3"></div>
+						<br>
+						<P>
+						<H6>DIA 5</H6>
+						</P>
+						<div id="tempmax4"></div>
+						<br>
+					</div>
+				</div>
 
-						<div class="quadro-favoritos"> 
-							<div id = "cidades-default" class = "quadro-pesquisa"> 
-								<H2>TEMPERATURA SENTIDA</H2>
-								<P><h4>HOJE</H4></P>
-								<div id="tempsent"></div>
-								<br>
-								<P><h4>AMANHÃ</H4></P>					
-								<div id="tempsent1"></div>
-								<br>
-								<P><H4>DIA 3</H4></P>					
-								<div id="tempsent2"></div>
-								<br>
-								<P><H4>DIA 4</H4></P>					
-								<div id="tempsent3"></div>
-								<br>
-								<P><H4>DIA 5</H4></P>					
-								<div id="tempsent4"></div>
-								<br>
-									</div>
-							</div>
+				<div class="quadro-favoritos">
+					<div id="cidades-default" class="quadro-pesquisa">
+						<H3>TEMPERATURA SENTIDA</H3>
+						<P>
+						<h6>HOJE</H6>
+						</P>
+						<div id="tempsent"></div>
+						<br>
+						<P>
+						<h6>AMANHÃ</H6>
+						</P>
+						<div id="tempsent1"></div>
+						<br>
+						<P>
+						<H6>DIA 3</H6>
+						</P>
+						<div id="tempsent2"></div>
+						<br>
+						<P>
+						<H6>DIA 4</H6>
+						</P>
+						<div id="tempsent3"></div>
+						<br>
+						<P>
+						<H6>DIA 5</H6>
+						</P>
+						<div id="tempsent4"></div>
+						<br>
+					</div>
+				</div>
 			</div>
+	</main>
 
-			
-    </main>
+	<div>
 
-<div>
-
-</div>
+	</div>
 </body>
 
 

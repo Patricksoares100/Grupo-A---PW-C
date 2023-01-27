@@ -16,18 +16,20 @@
 </head>
 
 <!--onload para correr ao abrir o body-->
+
 <body onload="init()">
 
-	<marquee> <img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade"> PROJETO PRÁTICO DA UNIDADE CURRICULAR DE PROGRAMAÇÃO WEB - WEBSITE DE CONSULTA DE METEOROLOGIA
+	<marquee> <img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade"> PROJETO
+		PRÁTICO DA UNIDADE CURRICULAR DE PROGRAMAÇÃO WEB - WEBSITE DE CONSULTA DE METEOROLOGIA
 		<img src="https://www.ipleiria.pt/wp-content/uploads/2021/10/estg_h-01.png" class="logocidade">
-		</marquee>
+	</marquee>
 	<!-- cabeçalho para logo-->
 	<!-- menu-->
 
 	<header>
-	<div class="fotonav">
+		<div class="fotonav">
 			<img src="https://wallpaperaccess.com/full/5466320.jpg">
-	</div>
+		</div>
 		<nav class="navbar navbar-expand-sm bg-dark navbar-dark">
 			<div class="container-fluid">
 				<ul class="navbar-nav">
@@ -43,47 +45,45 @@
 					<li class="nav-item">
 						<a class="nav-link" href="favoritos.html">FAVORITOS</a>
 					</li>
-					
+
 				</ul>
 			</div>
 		</nav>
 	</header>
 	<!--pesquisa por cidade-->
 	<!--e mostrar seis cidades a escolha-->
-	<main> 	
-		
-			<h2 class="seistitulo">6 PRINCIPAIS CIDADES PORTUGUESAS </h2>
+	<main>
 
-			<div class="seistabelas">
-	<div id = "default-citys"></div>
-	<div id = "cidades-default" class = "quadro-pesquisa">
-	<h5><span id = "cit">Cidade</span>
-	</h5>
-	<span id = "city"></span>
-		<h6></h6>
-	TEMPERATURA ATUAL<br><span id = "temp"></span> 
-	<h6></h6>
-	SENSAÇÃO TERMICA<br><span id = "termic"></span> 
-	<h6></h6>
-	VENTO KM/H <br><span id = "wind"></span> 
-	<h6></h6>
-	HUMIDADE %<br><span id = "humidity"></span>
-	</div>
+		<h2 class="seistitulo">6 PRINCIPAIS CIDADES PORTUGUESAS </h2>
+
+		<div class="seistabelas">
+			<div id="default-citys"></div>
+			<div id="cidades-default" class="quadro-pesquisa">
+				<h5><span id="cit">Cidade</span>
+				</h5>
+				<span id="city"></span>
+				<h6></h6>
+				TEMPERATURA ATUAL<br><span id="temp"></span>
+				<h6></h6>
+				SENSAÇÃO TERMICA<br><span id="termic"></span>
+				<h6></h6>
+				VENTO KM/H <br><span id="wind"></span>
+				<h6></h6>
+				HUMIDADE %<br><span id="humidity"></span>
 			</div>
-	
-					<div class="pesquisa">
-						<label for="LOCALIDADE">CIDADE 1:</label>
-						<input type="text" id="LOCALIDADE_SEARCH" placeholder="LOCALIDADE" />
-						<div class="button">
-						<button onclick="search()" type="submit" class="btn btn-primary">Pesquisar</button>
-						<div id="search-result"></div>
-						<button onclick="addFavoritos()">Add Favoritos</button>
-						
-				</div>
-				<br>
+		</div>
+		<!--pesquisa individual da cidade / localidade search vai buscar o valor obtido na função-->
+		<div class="pesquisa">
+			<label for="LOCALIDADE">CIDADE 1:</label>
+			<input type="text" id="LOCALIDADE_SEARCH" placeholder="LOCALIDADE" />
+			<div class="button">
+				<button onclick="search()" type="submit" class="btn btn-primary">Pesquisar</button>
+				<div id="search-result"></div>
+				<button onclick="addFavoritos()">Add Favoritos</button>
 			</div>
+			<br>
+		</div>
 		<br>
-		
 	</main>
 </body>
 
