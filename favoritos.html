@@ -1,99 +1,84 @@
 <!DOCTYPE html>
 <html>
+   <head>
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
 
-<head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>DETALHE - weather API</title>
-    <link rel="stylesheet" type="text/css" href="css/estilos.css">
-    <script type="text/javascript" src="js/favoritos.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
+      <title>FAVORITOS - CIDADES DE PORTUGAL</title>
+      <link rel="stylesheet" type="text/css" href="favoritos.css">
+      <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
+
+      <script type="text/javascript" src="favoritos.js"></script>
+      <script type="text/javascript" src="concelhos.js"></script>
+      <script type="text/javascript" src="current_weather.js"></script>
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.1/jquery.min.js"
         integrity="sha512-aVKKRRi/Q/YV+4mjoKBsE4x3H+BkegoM/em46NNlCqNTmUYADjBbeNefNxYV7giUp0VxICtqdrbqU7iVaeZNXA=="
         crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
-</head>
+      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
 
-<!--onload para correr ao abrir o body-->
-<body onload="searchFavoritos()">
-    <p id="GPS"></p>
-    <marquee> <img src="https://emojitool.com/img/facebook/13.1/cityscape-406.png" class="logocidade"> CIDADE ATUAL (<button onclick="getLocation()">AQUI</button>) - Temperatura Atual º - TEMP MAX º - TEMP MIN <br></marquee>
-    <!-- cabeçalho para logo-->
-    <!-- menu-->
+   </head>
 
+   <!--  -----------------------------------------------  -->
+   <!--                       BODY                        -->
+   <!--  -----------------------------------------------  -->
 
-    <header>
-        <div class="fotonav">
+   <body onload="mainfav('cities_tbl')" >
+
+      <marquee> 
+         <img src="https://emojitool.com/img/facebook/13.1/cityscape-406.png" class="logocidade"> 
+         CIDADE ATUAL ( <span id="header_city"></span> )
+         - Temperatura Atual: <span id="header_temp"></span>
+         <br>
+         
+
+      </marquee>
+
+      <!--  -----------------------------------------------  -->
+
+      <header >
+         <div id="fotobar">
             <img src="https://wallpaperaccess.com/full/5466320.jpg">
-        
+         </div>
 
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
+         <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
             <div class="container-fluid">
-                <ul class="navbar-nav">
-                    <li class="nav-item">
-                        <a class="nav-link" href="index.html">HOME</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="detalhe.html">EM DETALHE</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="forecast.html">FORECAST</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link active" href="favoritos.html">FAVORITOS</a>
-                    </li>
-                    
-                </ul>
+               <ul class="navbar-nav">
+                  <li class="nav-item">
+                     <a class="nav-link" href="index.html">HOME</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link" href="detalhe.html">EM DETALHE</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link " href="forecast.html">FORECAST</a>
+                  </li>
+                  <li class="nav-item">
+                     <a class="nav-link active" href="favoritos.html">FAVORITOS</a>
+                  </li>
+               </ul>
             </div>
-        </nav>
-    </header>
-    <!--pesquisa por cidade-->
-    <!--e mostrar seis cidades a escolha-->
-    <main>  
-        <div id="default-citys"></div>
-			
-        <div id="cidades-default" class="quadro-pesquisa">
-        <h5>
-            <span id="cit">Cidade</span>
-        </h5>
-        <span id="city"></span>
-        <p id="temp">
-            <span>
-                <img id="temp-icon">
-            </span>&deg;C
-        </p>
-        <div id="humidity">
-        <img src="http://openweathermap.org/img/wn/09d.png">
-        <span id="wind"></span>
-        </div>
-        <button onclick="remove()">Remove</button>
-        </div>
-        <!-- <div id="fundo" class="container">
-            <h2>FAVORITOS<input type="text" id="LOCALIDADE" placeholder="LOCALIDADE" />
-				<button onclick="search()" type="submit" class="btn btn-primary">Pesquisar<span>&#128269;</span> </h2>
-            </div> -->
- 
+         </nav>
+      </header>   
 
+      <!--  -----------------------------------------------  -->
 
-            <!-- <div class="pesquisa">
-                <label for="LOCALIDADE">Localidade:</label>
-                <input type="text" id="LOCALIDADE" />
-            </div>
-        </div>
-        <br>
-        <div class="button">
-            <button onclick="search()" type="submit" class="btn btn-primary">Pesquisar</button>
-        </div>
-        <br>
-        <div id="fundo2">
-            <p1>texto</p1>
-        </div> -->
-    </main>
+      <main>
+         <!-- tabela das cidades -->
+         <table id="cities_tbl"></table>
 
-<div>
-
-</div>
-</body>
+         <br><br>
+         <!-- apagar favoritos -->
+         <label id="delfav_lbl" for="del_city">Cidade a eliminar:</label>
+         <select name="delete_fav_box" id="delete_fav_box" 
+            onchange="del_favorite(this)" class="del_favorit">
+            <option value=""></option>
+         </select> 
+   
+      </main>
+   
+   </body>
 
 
 </html>
+
