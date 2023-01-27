@@ -5,26 +5,12 @@ const citys = ["Leiria","Porto","Lisboa","Coimbra","Faro","Braga"];
 
 //A chamar onLoad
 function init() {
-  //animate_string();
   getInicialCityData();
 }
-
-/*//leiria topo
-function search() {
-  var city = $('#lOCAL_LEIRIA').val();
-	$.ajax({
-		method:"GET",
-		url: "https://api.openweathermap.org/data/2.5/weather?lat={39.7436}&lon={-8.8071}&appid="+apikey+"&units=metric"
-		 })
-	.done(function(msg){
-    console.log(msg);
-  })
-}*/
 
 // funcao pesquisa cidade
 
 function search() {
-	//var city = document.getElementById('').value;
   var city = $('#LOCALIDADE_SEARCH').val();
 	$.ajax({
 		method:"GET",
@@ -34,7 +20,6 @@ function search() {
     console.log(msg);
 
     var cloneCard = $('#cidades-default').clone();
-    // const icon = "http://openweathermap.org/img/wn/"
 
     $('#city', cloneCard).text(msg.name);
     $('#temp', cloneCard).text(msg.main.temp);
@@ -72,8 +57,6 @@ function getInicialCityData() {
 }
 
 
-
-
 //exemplo dado na aula de rodar texto corrido
 function animate_string(id) {
     var element = document.getElementById(id);
@@ -85,34 +68,3 @@ function animate_string(id) {
     }, 100);
 }
 
-
-
-//GPS W3SCHOOL
-
-var x = document.getElementById("GPS");
-
-function getLocation() {
-  if (navigator.geolocation) {
-    navigator.geolocation.getCurrentPosition(showPosition);
-  } else { 
-    x.innerHTML = "Geolocation is not supported by this browser.";
-  }
-}
-
-function showPosition(position) {
-  x.innerHTML = "Latitude: " + position.coords.latitude + 
-  "<br>Longitude: " + position.coords.longitude;
-}
-
-function addFavoritos() {
-  var old = JSON.parse(localStorage.getItem('Favoritos'));
-  var city = $('#LOCALIDADE_SEARCH').val();
-  //VER COMO GUARDAR AS VARIAS CIDADES NO LOCAL STORAGE
-  // if(old){
-  // VEr se quantodade =< 6
-  //   localStorage.setItem('Favoritos',old.append(city));
-  // } else {
-  //   localStorage.setItem('Favoritos',JSON.stringify(city));
-  // }
-  localStorage.setItem('Favoritos',['Leiria','Porto','Braga']);
-}
